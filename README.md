@@ -19,7 +19,7 @@ alguno de los siguiente lenguajes: Java / Golang / C-C++ / Javascript (node) / P
 En donde recibirás como parámetro un array de Strings que representan cada fila de una tabla de (NxN) con la secuencia del ADN. Las letras de los Strings solo pueden ser: **(A,T,C,G)**, las cuales representa cada base nitrogenada del ADN.
 
 <p align="center">
-  <img src="public/assets/images/matriz.png" width="350" title="img">
+  <img src="public/assets/images/matriz.png" width="550" title="img">
 </p>
 
 Sabrás si un humano es mutante, si encuentras **(más de una secuencia de cuatro letras iguales)**, de forma oblicua, horizontal o vertical.
@@ -53,10 +53,6 @@ millón de peticiones por segundo).
 ## Tecnología de desarrollo
 Python 3.9.2
 
-## Requisitos
-- Si no tenes mongodb instalado
-  - instalar docker
-  - en consola en la raiz del proyecto ```docker-compose up -d```
 
 ### Endpoint mutant
 El cual se encarga a partir de un array de string (String[]) comprobar si el ADN es mutante o humano:
@@ -69,7 +65,7 @@ Content-Type: application/json
 ```
 
 ### Endpoint stats
-El cual se encarga de devolver los datos del servidor y promediarlos
+El cual se encarga de devolver las estadísticas de las verificaciones de ADN
 
 ### Peticio HTTP
 ```
