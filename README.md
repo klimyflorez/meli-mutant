@@ -51,8 +51,28 @@ millón de peticiones por segundo).
 ## Forma de Uso
 
 ## Tecnología de desarrollo
-Python 3.9.2
+Python Flask 3.9.2
 
+## Motor de base de datos
+SQLite 3
+
+### Crear base de datos
+  #### Ejecutar
+  1. sqlite3 pathfile/Mutants.bd
+  2. crate table if no exist stats(id Integer Primary Key Autoincrement, entityd_id Text, is_mutant Boolean)
+
+## Requisitos
+
+### Ejecutar:
+pip install -r requirements.txt
+
+## RUN APP
+python main.py
+
+## Test Endpoint mutant
+### Ejecutar
+  1. locust -f \pathfile\meli-mutant\test.py --host={add Running on URL:PORT}
+  2. Iniciar la interfaz web en localhost:8089
 
 ### Endpoint mutant
 El cual se encarga a partir de un array de string (String[]) comprobar si el ADN es mutante o humano:
@@ -71,7 +91,6 @@ El cual se encarga de devolver las estadísticas de las verificaciones de ADN
 ```
 GET localhost/stats
 ```
-
 
 ## License
 
