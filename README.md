@@ -63,11 +63,10 @@ SQLite 3
 
 ## Requisitos
 
-### Ejecutar:
-pip install -r requirements.txt
-
 ## RUN APP
-python main.py
+  1. pip install -r requirements.txt
+
+  2. python main.py
 
 ## Test Endpoint mutant
 ### Ejecutar
