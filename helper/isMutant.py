@@ -1,9 +1,15 @@
+''' @author: klimyflorez
+    NumPy Array: objeto de matriz N-dimensional que tiene forma de filas y columnas,
+    en la que varios elementos están almacenados en sus respetivas ubicaciones de
+    memoria. 
+    - NumPy ocupa menos espacio memoria y es más rápido al crear la matriz '''
 import numpy as np
 from helper.strategy import GetHorizontal, GetVertical, GetDiagonal
 
+
 class IsMutant:
-    def __init__(self, data: dict) -> None:
-        self.data = data
+    def __init__(self, data: dict) -> None:        
+        self.data = data #se alamcena en la variable self.data los datos del array a verificar si es mutante
         self.options = ['horizontal', 'vertical', 'diagonal']
         self.letters = ['A','T','C','G']
         self.score = {}
@@ -13,8 +19,10 @@ class IsMutant:
         self.size = 0
         self.error = {}
         self.isEnd = False
-        self.get = self.getSeries()
+        self.get = self.getSeries() #se inicializa la función getSeries
 
+    ''' Función para verificar que las letras de los Strings 
+        solo pueden ser: (A,T,C,G)  '''
     def verify(self):
         for item in self.data:
             for letter in list(item):
@@ -25,11 +33,11 @@ class IsMutant:
                         'message': f"Unknown letter: ({letter}) "
                     }
             
-
+    ''' Función para retornar la coincidencia '''
     def getSeries(self) -> object:
-        verify = self.verify()
+        verify = self.verify() #se inicializa la función verify()
         parsed = [list(i) for i in self.data]
-        series = np.array(parsed)
+        series = np.array(parsed)        
         res = self.getCoincidencia(series)
         return res
 
@@ -39,6 +47,7 @@ class IsMutant:
         countMutantAux = 0
         while self.isEnd == False:
             if not self.isMutant and not self.isEnd:
+
                 result = self.validateIsMutant(self.options[index],series)
                 self.score[self.options[index]] = {
                     'mutant_dna': result.mutantScore,

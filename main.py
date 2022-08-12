@@ -1,3 +1,4 @@
+''' @author: klimyflorez '''
 from flask import Flask, request, jsonify
 from sqlalchemy import true
 from helper.isMutant import IsMutant
@@ -19,6 +20,7 @@ def isMutant():
         id = ''.join(data['dna'])
         #data = Stats.query.filter_by(_id=id).first()
         result = IsMutant(data['dna'])
+        #print(result)
         if result.isMutant:
             stat = Stast(id,result.isMutant)
             db.session.add(stat)
